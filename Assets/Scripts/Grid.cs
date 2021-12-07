@@ -27,7 +27,7 @@ namespace HB.TicTacToe
         /// <param name="cell"></param>
         public void AddCell(Cell cell)
         {
-            if (_container.childCount >= GameSettings.Instance.Rows * GameSettings.Instance.Cols) { return; }
+            if (_container.childCount >= GameSettings.Instance.TotalCells) { return; }
             
             var t = cell.transform;
             t.SetParent(_container);
@@ -51,6 +51,9 @@ namespace HB.TicTacToe
             }
         }
 
+        /// <summary>
+        /// Stub gizmo to find grid in the viewport, it is not rotated.
+        /// </summary>
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.magenta;

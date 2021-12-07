@@ -24,11 +24,9 @@ namespace HB.TicTacToe
         {
             var gs = GameSettings.Instance;
 
-            var total = gs.Rows * gs.Cols;
-
             _grid.Clear();
 
-            for (var i = 0; i < total; i++)
+            for (var i = 0; i < gs.TotalCells; i++)
             {
                 var cell = Instantiate(_cellPrefab);
                 cell.Initialize(i, this);
